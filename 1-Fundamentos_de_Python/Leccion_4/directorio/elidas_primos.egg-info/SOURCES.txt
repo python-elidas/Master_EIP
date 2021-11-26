@@ -1,0 +1,7 @@
+MANIFEST.in
+setup.py
+elidas_primos/__init__.py
+elidas_primos.egg-info/PKG-INFO
+elidas_primos.egg-info/SOURCES.txt
+elidas_primos.egg-info/dependency_links.txt
+elidas_primos.egg-info/top_level.txt

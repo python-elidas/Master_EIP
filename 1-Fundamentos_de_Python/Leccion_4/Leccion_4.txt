@@ -1,0 +1,2 @@
+El proyecto de Pypi se llama elidas_primos y consta de una unica funcion llamada
+primos(n)
