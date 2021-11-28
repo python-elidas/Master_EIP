@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>pycco_test.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>pycco_test.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      <h3><span id="test-de-documentación-con-pycco" href="test-de-documentación-con-pycco"> Test de documentación con pycco </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <p>Esta es la calse empleada para realizar un informe de gastos a partir de
+un archivo csv.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <p><strong>LIBRARIES</strong></p>
+<ol>
+<li><strong>Pandas</strong></li>
+<li><strong>Plotly</strong></li>
+</ol>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <p><strong>MAIN CODE</strong></p>
+<p>Aqui se define la clase principal CSV junto con sus funciones.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">class</span> <span class="nc">CSV</span><span class="p">:</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verify</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_month_spend</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_month_income</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_month_save</span><span class="p">()</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <h3><span id="verify" href="verify"> verify </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <p>Se encarga de verificar que la infromación de todas las celdas sea
+correcta.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">verify</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">year</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;Enero&#39;</span><span class="p">,</span> <span class="s1">&#39;Febrero&#39;</span><span class="p">,</span> <span class="s1">&#39;Marzo&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Abril&#39;</span><span class="p">,</span> <span class="s1">&#39;Mayo&#39;</span><span class="p">,</span> <span class="s1">&#39;Junio&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Julio&#39;</span><span class="p">,</span> <span class="s1">&#39;Agosto&#39;</span><span class="p">,</span> <span class="s1">&#39;Septiembre&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Octubre&#39;</span><span class="p">,</span> <span class="s1">&#39;Noviembre&#39;</span><span class="p">,</span> <span class="s1">&#39;Diciembre&#39;</span><span class="p">]</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">year</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="n">month</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">Exception</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Falta </span><span class="si">{</span><span class="n">month</span><span class="si">}</span><span class="s1">, se tomará como nulo.&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
+                    <span class="n">year</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">month</span><span class="p">),</span>
+                    <span class="n">month</span><span class="p">,</span>
+                    <span class="n">values</span>
+                <span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Faltan valores en </span><span class="si">{</span><span class="n">month</span><span class="si">}</span><span class="s1">, se tomara como nulo.&#39;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      <h3><span id="clean" href="clean"> clean </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      <p>Lee la infromación del CSV y la nomaliza, convierte todos los datos a
+valores numericos si puede y si no, les asigna el valor 0.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-11'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-11'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">clean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+                            <span class="p">[</span><span class="n">item</span><span class="p">],</span> <span class="nb">int</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">try</span><span class="p">:</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+                                <span class="p">[</span><span class="n">item</span><span class="p">],</span> <span class="nb">int</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+                        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="n">item</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">item</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="n">item</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-12'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-12'>#</a>
+      </div>
+      <h3><span id="get_month_spend" href="get_month_spend"> get_month_spend </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-13'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-13'>#</a>
+      </div>
+      <p>Genera un diccionario con la suma de los gastos mensuales, almacena en
+una variable el total de gastos anuales y calcula la media de gasto
+mensual.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-14'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-14'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">get_month_spend</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spend</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>  <span class="c1"># Guarda el gasto de cada mes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sp_t</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># guarda el gasto total a lo largo del año</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">spend</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">item</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">spend</span> <span class="o">+=</span> <span class="n">item</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">spend</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">spend</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sp_t</span> <span class="o">+=</span> <span class="n">spend</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sp_avg</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sp_t</span> <span class="o">/</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Guarda la media de gasto</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sp_t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">spend</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-15'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-15'>#</a>
+      </div>
+      <h3><span id="get_month_income" href="get_month_income"> get_month_income </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-16'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-16'>#</a>
+      </div>
+      <p>Genera un diccionario con la suma de los ingresos mensuales, almacena
+en una variable el total de ingresos anuales.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-17'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-17'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">get_month_income</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">income</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ic_t</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># guarda el ingreso total a lo largo del año.</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">save</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">item</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">save</span> <span class="o">+=</span> <span class="n">item</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">income</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">save</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ic_t</span> <span class="o">+=</span> <span class="n">save</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ic_t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">income</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-18'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-18'>#</a>
+      </div>
+      <h3><span id="get_month_save" href="get_month_save"> get_month_save </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-19'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-19'>#</a>
+      </div>
+      <p>Almacena en un diccionario el valance mensual.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-20'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-20'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">get_month_save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">income</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">spend</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">save</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-21'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-21'>#</a>
+      </div>
+      <h3><span id="gen_graph" href="gen_graph"> gen_graph </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-22'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-22'>#</a>
+      </div>
+      <p>Genera un grafico con la evolucion solicitada a lo largo del año, bien
+sea la evolucion de los gastos, la de los ingresos o la de los
+ahorros</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-23'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-23'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">gen_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">show</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span>
+                    <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Introduzca la grafica a mostrar(1, 2, 3):</span><span class="se">\</span>
+<span class="s1">                    </span><span class="se">\n\t</span><span class="s1">1) Evolución de los ingresos.</span><span class="se">\</span>
+<span class="s1">                    </span><span class="se">\n\t</span><span class="s1">2) Evolución de los gastos.</span><span class="se">\</span>
+<span class="s1">                    </span><span class="se">\n\t</span><span class="s1">3) Evolucion de los ahorros.</span><span class="se">\</span>
+<span class="s1">                    </span><span class="se">\n</span><span class="s1">&gt;&gt;&gt;&#39;</span>
+                <span class="p">))</span>
+                <span class="k">if</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="n">show</span> <span class="ow">or</span> <span class="n">show</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span>
+                <span class="k">break</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Caracter no valido.&#39;</span><span class="p">)</span>
+
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+            <span class="n">title</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">select_tittle</span><span class="p">(</span><span class="n">show</span><span class="p">),</span>
+            <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Mes&#39;</span><span class="p">,</span>
+            <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Valor&#39;</span>
+        <span class="p">)</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">select_case</span><span class="p">(</span><span class="n">show</span><span class="p">))</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-24'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-24'>#</a>
+      </div>
+      <h3><span id="select_case" href="select_case"> select_case </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-25'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-25'>#</a>
+      </div>
+      <p>Simulando una estructura Select/Case, genera la linea que se momstrará
+en el grafico segun la petición del usuario.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-26'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-26'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">select_case</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">case</span><span class="p">):</span>
+        <span class="n">cases</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="mi">1</span><span class="p">:</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+                <span class="n">x</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">income</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span>
+                <span class="n">y</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">income</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span>
+                <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ingreso&#39;</span>
+            <span class="p">),</span>
+            <span class="mi">2</span><span class="p">:</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+                <span class="n">x</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">spend</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span>
+                <span class="n">y</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">spend</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span>
+                <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Gasto&#39;</span>
+            <span class="p">),</span>
+            <span class="mi">3</span><span class="p">:</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+                <span class="n">x</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span>
+                <span class="n">y</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span>
+                <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ahorro&#39;</span>
+            <span class="p">)</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">cases</span><span class="p">[</span><span class="n">case</span><span class="p">]</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-27'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-27'>#</a>
+      </div>
+      <h3><span id="select_tittle" href="select_tittle"> select_tittle </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-28'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-28'>#</a>
+      </div>
+      <p>Simulando una estructura Select/Case, Selecciona el titulo del grafico.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-29'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-29'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">select_tittle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">case</span><span class="p">):</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;Evolución de los ingresos&#39;</span><span class="p">,</span>
+            <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;Evolución de los gastos.&#39;</span><span class="p">,</span>
+            <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;Evolucion de los ahorros.&#39;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">title</span><span class="p">[</span><span class="n">case</span><span class="p">]</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-30'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-30'>#</a>
+      </div>
+      <h3><span id="print_info" href="print_info"> print_info </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-31'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-31'>#</a>
+      </div>
+      <p>Da formato e imprime la infromación relevante del archivo CSV.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-32'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-32'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">print_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">GASTO </span><span class="se">\n</span><span class="s1">Mensual:&#39;</span><span class="p">)</span>
+        <span class="nb">max</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">month</span> <span class="o">=</span> <span class="nb">str</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">spend</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">spend</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nb">max</span><span class="p">:</span>
+                <span class="nb">max</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spend</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">month</span> <span class="o">=</span> <span class="n">i</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">spend</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Mes con mayor gasto: </span><span class="si">{</span><span class="n">month</span><span class="si">}</span><span class="s1">(</span><span class="si">{</span><span class="nb">max</span><span class="si">}</span><span class="s1">)</span><span class="se">\</span>
+<span class="s1">            </span><span class="se">\n</span><span class="s1">La media de gasto Mensual ha sido: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">sp_avg</span><span class="si">}</span><span class="se">\</span>
+<span class="s1">            </span><span class="se">\n</span><span class="s1">El gasto total a lo largo del año ha sido: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">sp_t</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">El ingreso total a lo largo del año ha sido: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ic_t</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">AHORRO </span><span class="se">\n</span><span class="s1">Mensual:&#39;</span><span class="p">)</span>
+        <span class="nb">max</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">month</span> <span class="o">=</span> <span class="nb">str</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nb">max</span><span class="p">:</span>
+                <span class="nb">max</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">month</span> <span class="o">=</span> <span class="n">i</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Mes con mayor ahorro: </span><span class="si">{</span><span class="n">month</span><span class="si">}</span><span class="s1">(</span><span class="si">{</span><span class="nb">max</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">El valance al finalizar el año es: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ic_t</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">sp_t</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-33'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-33'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">CSV</span><span class="p">(</span><span class="s1">&#39;finanzas2020.csv&#39;</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">print_info</span><span class="p">()</span>
+    <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Presione Enter... </span><span class="se">\n</span><span class="s1">&gt;&gt;&gt; &#39;</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">gen_graph</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">run</span><span class="p">()</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-34'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-34'>#</a>
+      </div>
+      <p><strong>NOTES</strong> #</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="sd">&#39;&#39;&#39;</span>
+
+
+<span class="sd">&#39;&#39;&#39;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-35'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-35'>#</a>
+      </div>
+      <p><strong>BIBLIOGRAPHY</strong> #</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="sd">&#39;&#39;&#39;</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>
