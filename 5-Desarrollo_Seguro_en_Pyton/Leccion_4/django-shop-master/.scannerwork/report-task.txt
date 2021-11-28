@@ -1,0 +1,6 @@
+projectKey=L4_DS_django_shop
+serverUrl=http://localhost:9000
+serverVersion=9.0.0.45539
+dashboardUrl=http://localhost:9000/dashboard?id=L4_DS_django_shop
+ceTaskId=AXqH34qGbaW4GpycPq6u
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXqH34qGbaW4GpycPq6u
