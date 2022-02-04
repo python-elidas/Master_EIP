@@ -1,0 +1,109 @@
+Introduce la API Key para shodan:
+>>> TX6Il9Tp7r61DCaLf6SYJs8Kb8zYjFg3
+Introduce los términos de búsqueda
+>>> Apache 2.4.49
+Resultados hallados.
+Empezando análisis...
+.Host: 54.211.199.15
+.State: up
+.Ports:
+|___.Number: 80
+|   |___Name: http
+|   |___State: None
+|   |___Version: 2.4.49
+|   |___Script: {'http-methods': '\n  Potentially risky methods: TRACE', 'http-title': 'Amazon ECS Sample App', 'http-server-header': 'Apache/2.4.49 (Unix)'}
+
+
+.Host: 149.156.124.57
+.State: up
+.Ports:
+|___.Number: 80
+|   |___Name: http
+|   |___State: None
+|   |___Version: 2.4.49
+|   |___Script: {'http-server-header': 'Apache/2.4.49 (Win64) OpenSSL/1.1.1l PHP/7.3.31'}
+|___.Number: 443
+|   |___Name: http
+|   |___State: None
+|   |___Version: 2.4.49
+|   |___Script: {'ssl-cert': 'Subject: commonName=localhost\nNot valid before: 2009-11-10T23:48:47\nNot valid after:  2019-11-08T23:48:47', 'ssl-date': 'TLS randomness does not represent time', 'http-server-header': 'Apache/2.4.49 (Win64) OpenSSL/1.1.1l PHP/7.3.31', 'tls-alpn': '\n  http/1.1'}
+
+
+.Host: 193.58.164.51
+.State: up
+.Ports:
+|___.Number: 21
+|   |___Name: ftp
+|   |___State: None
+|   |___Version: 1.3.5a
+|   |___Script: None
+|___.Number: 80
+|   |___Name: http
+|   |___State: None
+|   |___Version: 2.4.49
+|   |___Script: {'http-server-header': 'Apache/2.4.49 (Ubuntu)', 'http-title': 'Apache2 Ubuntu Default Page: It works'}
+|___.Number: 222
+|   |___Name: ssh
+|   |___State: None                                                                                                 
+|   |___Version: 0.9.9                                                                                              
+|   |___Script: None                                                                                                
+|___.Number: 443                                                                                                    
+|   |___Name: http                                                                                                  
+|   |___State: None                                                                                                 
+|   |___Version: 2.4.49                                                                                             
+|   |___Script: {'ssl-cert': 'Subject: commonName=reformhaus.web-crossing.com\nNot valid before: 2019-07-16T14:18:06\nNot valid after:  2029-07-13T14:18:06', 'ssl-date': 'TLS randomness does not represent time', 'tls-alpn': '\n  h2\n  http/1.1', 'http-server-header': 'Apache/2.4.49 (Ubuntu)', 'http-title': '400 Bad Request'}
+|___.Number: 2000
+|   |___Name: cisco-sccp
+|   |___State: None
+|   |___Version: 
+|   |___Script: None
+|___.Number: 5060
+|   |___Name: sip
+|   |___State: None
+|   |___Version: 
+|   |___Script: None
+|___.Number: 8008
+|   |___Name: http
+|   |___State: None
+|   |___Version: 
+|   |___Script: {'fingerprint-strings': '\n  FourOhFourRequest: \n    HTTP/1.1 302 Found\n    Location: https://:8010/nice%20ports%2C/Tri%6Eity.txt%2ebak\n    Connection: close\n    X-Frame-Options: SAMEORIGIN\n    X-XSS-Protection: 1; mode=block\n    X-Content-Type-Options: nosniff\n    Content-Security-Policy: frame-ancestors\n  GenericLines, HTTPOptions, RTSPRequest, SIPOptions: \n    HTTP/1.1 302 Found\n    Location: https://:8010\n    Connection: close\n    X-Frame-Options: SAMEORIGIN\n    X-XSS-Protection: 1; mode=block\n    X-Content-Type-Options: nosniff\n    Content-Security-Policy: frame-ancestors\n  GetRequest: \n    HTTP/1.1 302 Found\n    Location: https://:8010/\n    Connection: close\n    X-Frame-Options: SAMEORIGIN\n    X-XSS-Protection: 1; mode=block\n    X-Content-Type-Options: nosniff\n    Content-Security-Policy: frame-ancestors', 'http-title': 'Did not follow redirect to https://193.58.164.51:8010/'}
+
+
+.Host: 103.81.168.55
+.State: up
+.Ports:
+|___.Number: 80
+|   |___Name: http
+|   |___State: None
+|   |___Version: 
+|   |___Script: None
+|___.Number: 443
+|   |___Name: https
+|   |___State: None
+|   |___Version: 
+|   |___Script: None
+|___.Number: 3389
+|   |___Name: ms-wbt-server
+|   |___State: None
+|   |___Version: 
+|   |___Script: None
+|___.Number: 49154
+|   |___Name: unknown
+|   |___State: None
+|   |___Version: 
+|   |___Script: None
+
+
+.Host: 34.202.250.219
+.State: up
+.Ports:
+|___.Number: 80
+|   |___Name: http
+|   |___State: None
+|   |___Version: 2.4.49
+|   |___Script: {'http-cookie-flags': '\n  /: \n    PHPSESSID: \n      httponly flag not set', 'http-server-header': 'Apache/2.4.49 (Unix) OpenSSL/1.1.1d PHP/7.4.23', 'http-title': "Site doesn't have a title (text/html; charset=UTF-8)."}
+|___.Number: 443
+|   |___Name: http
+|   |___State: None
+|   |___Version: 2.4.49
+|   |___Script: {'http-cookie-flags': '\n  /: \n    PHPSESSID: \n      httponly flag not set', 'http-server-header': 'Apache/2.4.49 (Unix) OpenSSL/1.1.1d PHP/7.4.23', 'ssl-date': 'TLS randomness does not represent time', 'ssl-cert': 'Subject: commonName=example.com\nNot valid before: 2012-11-14T11:18:27\nNot valid after:  2022-11-12T11:18:27', 'http-title': "Site doesn't have a title (text/html; charset=UTF-8)."}
