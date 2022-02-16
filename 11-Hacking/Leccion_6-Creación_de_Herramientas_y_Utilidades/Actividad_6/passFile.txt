@@ -1,0 +1,10 @@
+kali
+windows
+user
+msfadmin
+admin
+password
+
+elidas
+12345
+a1b2c3d4e5

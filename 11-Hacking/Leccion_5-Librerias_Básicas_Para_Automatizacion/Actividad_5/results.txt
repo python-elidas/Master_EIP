@@ -1,0 +1,59 @@
+[+] Introduzca la IP de su maquina:
+>>> 192.168.0.103
+[-] Searching for IPs ...
+[*] 192.168.0.10
+[*] 192.168.0.12
+[*] 192.168.0.13
+[*] 192.168.0.15
+[*] 192.168.0.16
+[*] 192.168.0.18
+[*] 192.168.0.100
+[*] 192.168.0.103
+[*] 192.168.0.104
+[*] 192.168.0.106
+[-] Searching for SSH Banners ...
+[-] Connecting to 192.168.0.10 in port 22
+[('22', 'SSH-2.0-OpenSSH_7.6p1 Ubuntu-4ubuntu0.5')]
+[-] Connecting to 192.168.0.12 in port 22
+[('22', 'SSH-2.0-IPSSH-6.6.0')]
+[-] Connecting to 192.168.0.13 in port 22
+[Errno 111] Connection refused
+[]
+[-] Connecting to 192.168.0.15 in port 22
+[Errno 111] Connection refused
+[]
+[-] Connecting to 192.168.0.16 in port 22
+[Errno 113] No route to host
+[]
+[-] Connecting to 192.168.0.18 in port 22
+[Errno 111] Connection refused
+[]
+[-] Connecting to 192.168.0.100 in port 22
+[Errno 111] Connection refused
+[]
+[-] Connecting to 192.168.0.104 in port 22
+[Errno 111] Connection refused
+[]
+[-] Connecting to 192.168.0.106 in port 22
+[('22', 'SSH-2.0-OpenSSH_7.6p1 Ubuntu-4ubuntu0.5')]
+[#] Se han hallado las siguientes IPs con servicios ssh:
+[0] 192.168.0.10
+[1] 192.168.0.12
+[2] 192.168.0.106
+[+] Seleccione una o varias (separadas por ",") IPs:
+>>> 0,2
+[-] Response from 192.168.0.10:
+[*] STDOUT
+[*] Ubuntu 18.04.6 LTS \n \l
+
+[*] 
+
+[-]====================[-]
+
+[-] Response from 192.168.0.106:
+[*] STDOUT
+[*] Ubuntu 18.04.6 LTS \n \l
+
+[*] 
+
+[-]====================[-]

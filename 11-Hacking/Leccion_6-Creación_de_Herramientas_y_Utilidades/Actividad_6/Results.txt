@@ -1,0 +1,5 @@
+┌──(elidas㉿kali-FireBall)-[~/…/Master_EIP/11-Hacking/Leccion_6-Creación_de_Herramientas_y_Utilidades/Actividad_6]
+└─$ python3 Actividad_6.py -os unix -uf shadows
+[*] Hash Found!
+[*]     Username: msfadmin
+[*]     Password: msfadmin
