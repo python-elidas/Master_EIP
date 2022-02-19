@@ -1,0 +1,18 @@
+DataDirectory /home/adastra/tor_data_directory 
+#Nickname AdastraTORY
+ORPort 9001
+ControlPort 9051
+ContactInfo adastra at thehackerway dot com
+BridgeRelay 1
+Exitpolicy reject *:*
+Log notice file /home/adastra/tor_data_directory/tor_log.log
+
+#./tor --hash-password password1
+HashedControlPassword 16:E7F9882723B04A9C60D048450B448F5E0A5D25690C0780C22E5E5FFD9E
+#./tor --hash-password password2
+HashedControlPassword 16:890A4B62F87681F7609A31503472ADBD57EA3D98391FD41E977A8B1548
+#./tor --hash-password password3
+HashedControlPassword 16:2499444244208D21607827968B29912A0CE35630035366C93F88D6C3F9
+
+CookieAuthentication 1
+
