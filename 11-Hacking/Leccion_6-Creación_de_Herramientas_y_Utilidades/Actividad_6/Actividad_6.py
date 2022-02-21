@@ -7,7 +7,7 @@ import argparse
 from attr import has
 
 #__MAIN FUNCTIONS__#
-def win(hash, psswrd):
+def win(hash, psswrd): # si es un sistema windows:
     ntlm_hash = binascii.hexlify(
         hashlib.new(
             'md4',
@@ -16,7 +16,7 @@ def win(hash, psswrd):
     )
     return hash.split(':')[0], ntlm_hash
 
-def unix(hash, psswrd):
+def unix(hash, psswrd): # SI es un sistema linux
     methods = {
         '1': '[-] Hash type MD5 ...',
         '2a': '[-] Hash type BLOWFISH ...',
@@ -28,12 +28,12 @@ def unix(hash, psswrd):
     usr = hash.split(':')[0]
     hash = hash.split(':')[1]
     #print(methods[hash.split('$')[1]])
-    salt = '$'+'$'.join(hash.split('$')[1:3])+'$'
+    salt = '$'+'$'.join(hash.split('$')[1:3])+'$' # cadena de encriptación
     return usr, crypt.crypt(psswrd, salt)
             
 def bruteForce(syst, hashFile, psswrds='passFile.txt'):
-    hashes = open(hashFile, 'r')
-    dictFile = open(psswrds, 'r').readlines()
+    hashes = open(hashFile, 'r') # abrimos el archivo con los hashes
+    dictFile = open(psswrds, 'r').readlines() # leemos el archivo con las posibles contraseñas
     for account in hashes.readlines():
         for line in dictFile:
             line = line.replace("\n","")
@@ -49,6 +49,7 @@ def bruteForce(syst, hashFile, psswrds='passFile.txt'):
 
 #__DEFAULT RUN__#
 if __name__ == '__main__':
+    # parseamos argumentos para que resulte mas comodo de lanzar
     parse = argparse.ArgumentParser(description='Brute force routine for system passwords')
     parse.add_argument(
         '-os', '--OperatinSystem',
